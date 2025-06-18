@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* body{
+  background-color: 		#f8f8e7;
+  
+} */
+
+/* @layer base {
+  body {
+    @apply bg-[#f8f8e7] dark:bg-[#242424] text-black dark:text-white;
+  }
+  
+  /* Custom text color for dark mode */
+  /* .dark-mode-text {
+    color: rgba(255, 255, 255, 0.87);
+  }
+} */ 
+body {
+  @apply bg-[#f8f8e7] dark:bg-[#242424] text-black dark:text-[rgba(255,255,255,0.87)];
+}
+
+@layer components{
+  .circle{
+    @apply size-3 rounded-full overflow-hidden flex justify-center items-center p-[1px]
+  }
+  .btn{
+    @apply  transition-colors duration-[250ms] dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-[#1a1a1a]  dark:border-2 dark:border-transparent  dark:hover:border-[#646cff] focus:outline-none
+  }
+  .dark-change{
+    @apply transition-colors duration-[250ms]  dark:hover:border-[#646cff]  focus:outline
+  }
+  
+}

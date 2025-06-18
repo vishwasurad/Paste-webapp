@@ -1,0 +1,13 @@
+
+# Global ignores
+*.log
+.env
+
+
+# Backend ignores
+/backend/node_modules/
+/backend/.env
+
+
+# Frontend ignores
+/paste-app/node_modules/

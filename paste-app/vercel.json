@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/pastes/:id",
+        "destination": "/index.html"
+      }
+    ]
+  }
+  
