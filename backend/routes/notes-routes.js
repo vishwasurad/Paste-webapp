@@ -6,7 +6,7 @@ const {
     getAllNotes,
     getNoteById,
     updateNote,
-    deleteNote
+    deleteNote,getNoteByTitle
 } = require('../controllers/notes-controller');
 
 router.post('/pastes/', createNote);

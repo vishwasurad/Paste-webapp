@@ -2,6 +2,16 @@ const Notes =  require("../models/notes-model")
 
 const createNote = async (req, res) => {
     try {
+        console.log(req.body)
+        console.log("createNote");
+        console.log("after")
+
+//         req.user={
+//     "id": "685123fb6aff0064f7aee12f",
+//     "email": "vishwa@gmail.com",
+//     "role": "NORMAL"
+//   }
+        
         const { title, content } = req.body;
 
         if (!title || !content) {
@@ -18,7 +28,6 @@ const createNote = async (req, res) => {
         });
 
         await newNote.save();
-
         res.status(201).json({
             success: true,
             message: 'Note created successfully',
@@ -35,12 +44,20 @@ const createNote = async (req, res) => {
 
 const getAllNotes = async (req, res) => {
     try {
+          req.user={
+    "id": "685123fb6aff0064f7aee12f",
+    "email": "vishwa@gmail.com",
+    "role": "NORMAL"
+  }
+        console.log("getAllNotes");
+        
+        console.log(req.user.id) // For testing purposes, remove this line in production
         const notes = await Notes.find({ createdBy: req.user.id })
             .sort({ createdAt: -1 });
-
+      
         res.json({
             success: true,
-            notes
+            notes: notes
         });
     } catch (error) {
         res.status(500).json({
@@ -166,5 +183,6 @@ module.exports = {
     getAllNotes,
     getNoteById,
     updateNote,
-    deleteNote
+    deleteNote,
+    getNoteByTitle
 };

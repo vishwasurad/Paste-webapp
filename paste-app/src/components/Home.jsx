@@ -19,7 +19,7 @@ const Home = () => {
 
      // Fetch all pastes when component mounts
      useEffect(() => {
-       dispatch(fetchAllPastes());
+      const data= dispatch(fetchAllPastes());
      }, [dispatch]);
 
      // it is used when user want to see/view its specific paste from pastes
@@ -112,7 +112,7 @@ const Home = () => {
           });
         } else {
           // creating new paste
-          await dispatch(createPaste(pasteData)).unwrap();
+          await dispatch(createPaste(pasteData));
           
           toast.success("Paste created successfully!", {
             duration: 3000,

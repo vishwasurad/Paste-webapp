@@ -23,8 +23,9 @@ app.use(cors(corsOptions));
 
 
 
-app.use('/api/auth', userRoutes);
-app.use('/api/',checkAuth,authorize(["NORMAL","ADMIN"]), notesRoutes);
+// app.use('/api/auth', userRoutes);
+// app.use('/api/',checkAuth,authorize(["NORMAL","ADMIN"]), notesRoutes);
+ app.use('/api/', notesRoutes);
 
 app.get('/', (req, res) => {
   res.send("Welcome to the backend server!")
